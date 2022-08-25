@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  height: 100vh;
+}
+
+h1{
+  color: aliceblue;
 }
 
 .App-logo {
@@ -26,6 +32,17 @@
 
 .App-link {
   color: #61dafb;
+}
+.btn {
+  border: none;
+  padding: 10px;
+  background-color: cadetblue;
+  color: aliceblue;
+}
+
+.btn:hover {
+  background-color: #61dafb;
+  color: black;
 }
 
 @keyframes App-logo-spin {

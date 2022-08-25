@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Jitsi from "./Component/jitsi";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  return (
+  const [openJitsi, setopenJitsi] = useState(false);
+  const uuId = uuidv4();
+
+  return openJitsi ? (
+    <>
+      <div>
+        <Jitsi uuId={uuId} />
+      </div>
+    </>
+  ) : (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>React App with Jitsi Integration</h1>
+        <button className="btn" onClick={() => setopenJitsi(true)}>
+          Video Conference
+        </button>
+      </div>
     </div>
   );
 }
